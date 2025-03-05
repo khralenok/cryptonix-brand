@@ -93,7 +93,9 @@ label {
   line-height: 135%;
 }
 
-input {
+input,
+select,
+option {
   font-size: calc(var(--paragraph-font-size) * 0.8);
   line-height: 135%;
 }

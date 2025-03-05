@@ -13,6 +13,7 @@
     <title>Cryptonix Visual Identity Guide</title>
     <script src="scripts/colorPicker.js" defer></script>
     <script src="scripts/fontSizeCalculator.js" defer></script>
+    <script src="scripts/formatPicker.js" defer></script>
   </head>
   <body>
         <div class="page-wrapper">
@@ -63,7 +64,18 @@
                       <img class="uniform" src="src/logo.svg" height="24" alt="Cryptonix Logo" />
                     </div>
                   </div>
-                  <a class="button" href="src/logo.svg" download="cryptonix-logo">Download</a>
+                  <form class="molecule vertical">
+                    <div class="molecule">
+                      <label for="mark-format">Format:</label>
+                      <select name="logo-format" id="logo-format" data-item="logo">
+                        <option value=".svg">.svg</option>
+                        <option value="-576.png">.png 576px</option>
+                        <option value="-288.png">.png 288px</option>
+                        <option value="-144.png">.png 144px</option>
+                      </select>
+                    </div>
+                    <a class="button" href="src/logo.svg" download="cryptonix-logo">Download</a>
+                  </form>
                 </div>
                 <div class="card">
                   <a>Mark</a>
@@ -76,7 +88,19 @@
                       <img class="uniform" src="src/mark.svg" height="24" alt="Cryptonix Mark" />
                     </div>
                   </div>
-                  <a class="button" href="src/mark.svg" download="cryptonix-mark">Download</a>
+                  <form class="molecule vertical">
+                    <div class="molecule">
+                      <label for="mark-format">Format:</label>
+                      <select name="mark-format" id="mark-format" data-item="mark">
+                        <option value=".svg">.svg</option>
+                        <option value="-512.png">.png 512px</option>
+                        <option value="-256.png">.png 256px</option>
+                        <option value="-256.png">.png 128px</option>
+                      </select>
+                    </div>
+                    <a class="button" href="src/mark.svg" download="cryptonix-mark">Download</a>
+                  </form>
+
                 </div>
               </div>
             </div>
