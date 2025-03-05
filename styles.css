@@ -12,6 +12,7 @@
   --color-darkest: #22282b;
   --color-accent: #ffe800;
   --container-width: 60em;
+  --header-width: 20em;
   --base-font-size: 16px;
   --font-scale-ratio: 1.25;
   --spacing-scale-ratio: 2;
@@ -110,35 +111,31 @@ span.secondary {
   color: var(--gray700);
 }
 
-.grid-wrapper {
+.page-wrapper {
+  position: absolute;
+  inset: 0;
   display: flex;
-}
-
-header {
-  position: relative;
-  width: 20rem;
-}
-
-main {
-  flex-grow: 1;
+  overflow: hidden;
 }
 
 nav {
-  width: 20rem;
   display: flex;
+  overflow: hidden;
+  inset: 0;
+  right: auto;
+  width: var(--header-width);
+  height: 100%;
+  z-index: 100;
   flex-direction: column;
-  gap: var(--spacing-siblings);
-  position: fixed;
   padding: var(--spacing-siblings);
-  top: 0;
-  bottom: 0;
   gap: var(--spacing-friends);
-  border-radius: 0 var(--spacing-friends) var(--spacing-friends) 0;
+  border-radius: var(--spacing-friends);
+  border: 1px solid var(--color-mid300);
   background: var(--color-lightest);
 }
 
 nav img {
-  height: calc(var(--logo-height) * 0.725);
+  width: 100%;
 }
 
 nav ol {
@@ -152,6 +149,11 @@ nav a {
   text-decoration: none;
   color: inherit;
   font-size: calc(var(--paragraph-font-size) * pow(var(--font-scale-ratio), 1));
+}
+
+main {
+  flex-grow: 1;
+  overflow-y: scroll;
 }
 
 section {
@@ -286,7 +288,6 @@ section {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-friends);
-  width: 80%;
 }
 
 .title.left {
@@ -408,21 +409,29 @@ button,
   :root {
     --paragraph-font-size: 1rem;
     --spacing-siblings: 0.75rem;
-    --container-width: 60em;
+    --container-width: 45em;
+    --header-width: 15em;
+    --logo-height: 1.5rem;
   }
 }
 
 @media screen and (max-width: 960px) {
   :root {
-    --container-width: 40em;
+    --logo-height: 2rem;
   }
-
   .component {
     grid-template-columns: repeat(6, 1fr);
   }
 
   .container.post {
     width: var(--container-width);
+  }
+  nav {
+    transform: translateX(calc(var(--header-width) * -1));
+    position: fixed;
+  }
+  main {
+    width: 100%;
   }
 }
 
@@ -431,6 +440,10 @@ button,
     --paragraph-font-size: 0.875rem;
     --spacing-siblings: 0.5rem;
     --container-width: 30em;
+    --logo-height: 1.4rem;
+  }
+  header {
+    display: none;
   }
 }
 
