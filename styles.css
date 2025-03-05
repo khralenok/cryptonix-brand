@@ -101,11 +101,17 @@ option {
 }
 
 a:link,
+.interactive-text,
 button {
   transition: transform 500ms;
 }
 a:link:hover,
-button:hover {
+.interactive-text:hover {
+  display: inline-block;
+  transform: scale(1.05);
+}
+button:hover,
+.button:hover {
   transform: scale(1.05);
 }
 
